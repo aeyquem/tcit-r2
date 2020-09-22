@@ -42,8 +42,8 @@ const PostList = ({ posts, loadPosts }) => {
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th className="post-name">Name</th>
+                    <th className="post-description">Description</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -51,7 +51,9 @@ const PostList = ({ posts, loadPosts }) => {
                 {posts.map(post => {
                     return <tr key={post.id}>
                         <td>{post.name}</td>
-                        <td>{post.description}</td>
+                        <td>
+                            <div className="content">{post.description}</div>
+                        </td>
                         <td><button onClick={() => deletePost(post.id)}>Delete</button></td>
                     </tr>
                 })}

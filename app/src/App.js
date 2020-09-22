@@ -8,14 +8,14 @@ import WritePost from './components/write-post.component';
 function App() {
 
   return (
-    <Fragment>
+    <div className="main-container">
       <WritePost />
-      <FilterPosts />
-      <PostList />
-    </Fragment>
+      <div className="data-container">
+        <FilterPosts />
+        <PostList />
+      </div>
+    </div>
   );
 }
-
-
 
 export default (App);

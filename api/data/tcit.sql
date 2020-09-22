@@ -7,8 +7,8 @@ create table posts (
 insert into posts(name, description)
 values('alejo','el primer post del sistema');
 insert into posts(name, description)
-values('fabri','il secondo post');
+values('fabrizio','il secondo post');
 insert into posts(name, description)
-values('ben','this is not the way');
+values('ben','the third one... motivated');
 insert into posts(name, description)
-values('murakami','色彩を持たない多崎つくると');
+values('murakami','これは4番目のポスト');

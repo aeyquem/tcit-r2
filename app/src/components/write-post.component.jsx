@@ -37,13 +37,11 @@ const WritePost = ({ createPost }) => {
 
     return (
         <div className="write-post-container">
-            <form onSubmit={submitPost} method="post">
-                Name:
-                <input type="text" placeholder="name" name="name" onChange={changeValue} />
-                Desc:
-                <input type="text" name="description" placeholder="Description" onChange={changeValue} />
-                <button type="submit" onClick={submitPost}>Crear post</button>
-            </form>
+            <span>Name:</span>
+            <input type="text" placeholder="name" name="name" onChange={changeValue} />
+            <span>Description:</span>
+            <textarea name="description" placeholder="Description" onChange={changeValue} />
+            <button type="submit" onClick={submitPost}>Crear post</button>
         </div>
     );
 }

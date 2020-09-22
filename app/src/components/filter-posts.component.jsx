@@ -2,22 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import { filterPost } from '../redux/actions'
 
-
-
 const FilterPosts = ({ filterPost }) => {
 
-    const onFilterPosts = (event) => {
+    const onFilterTextChanged = (event) => {
         event.preventDefault();
         filterPost(event.target.value);
     }
 
     return (
         <div className="filter-container">
+            <span>Autor: </span>
             <input type="text"
                 id="filter-text"
                 name="filter-text"
                 placeholder="nombre del autor"
-                onChange={onFilterPosts}>
+                onChange={onFilterTextChanged}>
             </input>
         </div>
     );
