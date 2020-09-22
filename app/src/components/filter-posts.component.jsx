@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux';
 import { filterPost } from '../redux/actions'
 
@@ -11,7 +11,7 @@ const FilterPosts = ({ filterPost }) => {
 
     return (
         <div className="filter-container">
-            <span>Autor: </span>
+            <span>Autor:&nbsp;</span>
             <input type="text"
                 id="filter-text"
                 name="filter-text"

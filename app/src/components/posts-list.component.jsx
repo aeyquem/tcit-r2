@@ -39,26 +39,34 @@ const PostList = ({ posts, loadPosts }) => {
     }
 
     return (
-        <table>
+        // <div className="table-container">
+        <table className="posts-table">
             <thead>
                 <tr>
-                    <th className="post-name">Name</th>
-                    <th className="post-description">Description</th>
+                    <th>Name</th>
+                    <th>Description</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {posts.map(post => {
                     return <tr key={post.id}>
-                        <td>{post.name}</td>
-                        <td>
-                            <div className="content">{post.description}</div>
+                        <td className="p-name">
+                            <div className="ovf">
+                                {post.name}
+                            </div>
                         </td>
-                        <td><button onClick={() => deletePost(post.id)}>Delete</button></td>
+                        <td className="p-description">
+                            <div className="ovf">{post.description}</div>
+                        </td>
+                        <td className="p-action">
+                            <button onClick={() => deletePost(post.id)}>Delete</button>
+                        </td>
                     </tr>
                 })}
             </tbody>
         </table>
+        // </div>
     );
 }
 

@@ -23,7 +23,7 @@ const rootReducer = (state = INITIAL_STATE, action) => {
         case postActions.FILTER_POST:
             return {
                 ...state,
-                displayPosts: state.posts.filter(p => p.name.includes(action.payload))
+                displayPosts: state.posts.filter(p => p.name.toLowerCase().includes(action.payload))
             }
         default:
             return state;
