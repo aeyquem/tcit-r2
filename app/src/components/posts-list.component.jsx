@@ -3,7 +3,7 @@ import { loadPosts } from '../redux/actions'
 import { connect } from 'react-redux'
 
 
-const PostList = ({ posts, loadPosts }) => {
+const PostList = ({ posts, loadPosts, textFilter }) => {
 
     useEffect(() => {
         loadPostsAsync();
@@ -18,6 +18,8 @@ const PostList = ({ posts, loadPosts }) => {
             console.log(error);
         }
     }
+
+    const filterPosts = posts.filter(p => p.name.toLowerCase().includes(textFilter));
 
     const deletePost = async (id) => {
         try {
@@ -49,7 +51,7 @@ const PostList = ({ posts, loadPosts }) => {
                 </tr>
             </thead>
             <tbody>
-                {posts.map(post => {
+                {filterPosts.map(post => {
                     return <tr key={post.id}>
                         <td className="p-name">
                             <div className="ovf">
@@ -71,7 +73,8 @@ const PostList = ({ posts, loadPosts }) => {
 }
 
 const mapStateToProps = (state) => ({
-    posts: state.displayPosts
+    posts: state.posts,
+    textFilter: state.textFilter
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -2,7 +2,7 @@ import postActions from './types'
 
 const INITIAL_STATE = {
     posts: [],
-    displayPosts: []
+    textFilter: ''
 }
 
 const rootReducer = (state = INITIAL_STATE, action) => {
@@ -12,18 +12,16 @@ const rootReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 posts: action.payload,
-                displayPosts: action.payload
             }
         case postActions.CREATE_POST:
             return {
                 ...state,
                 posts: [...state.posts, action.payload],
-                displayPosts: [...state.posts, action.payload],
             }
-        case postActions.FILTER_POST:
+        case postActions.FILTER_POssssssST:
             return {
                 ...state,
-                displayPosts: state.posts.filter(p => p.name.toLowerCase().includes(action.payload))
+                textFilter: action.payload
             }
         default:
             return state;

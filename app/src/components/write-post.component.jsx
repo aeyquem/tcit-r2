@@ -28,6 +28,8 @@ const WritePost = ({ createPost }) => {
         catch (error) {
             console.log(error)
         }
+
+        setPost({ name: '', description: '' });
     }
 
     const changeValue = (event) => {
@@ -38,7 +40,7 @@ const WritePost = ({ createPost }) => {
     return (
         <div className="write-post-container">
             <span>Name:</span>
-            <input type="text" placeholder="name" name="name" onChange={changeValue} />
+            <input type="text" placeholder="name" name="name" onChange={changeValue} value={post.name} />
             <span>Description:</span>
             <textarea name="description" placeholder="Description" onChange={changeValue} />
             <button type="submit" onClick={submitPost}>Crear post</button>
